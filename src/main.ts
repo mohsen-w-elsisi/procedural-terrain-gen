@@ -12,7 +12,7 @@ let h = CANVAS.height;
 const SIZE = 4;
 
 const LACONARITY = 2;
-const PERSISTANCE = 0.5;
+const PERSISTANCE = 0.6;
 
 const octaves = makeOctaves(3, w, h, SIZE, LACONARITY, PERSISTANCE);
 
