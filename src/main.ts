@@ -1,4 +1,4 @@
-import makeNoiseMap from "./makeNoiseMap";
+import makeOctaves from "./makeOctaves";
 import renderNoiseMapToCanvas from "./renderNoiseMapToCanvas";
 import "./style.css";
 
@@ -7,9 +7,12 @@ const CANVAS_CTX = CANVAS.getContext("2d")!;
 
 let w = CANVAS.width;
 let h = CANVAS.height;
-let size = 10;
 
-let noiseMap = makeNoiseMap(w, h, size);
+const SIZE = 4;
 
-renderNoiseMapToCanvas(noiseMap, CANVAS_CTX)
+const LACONARITY = 2;
+const PERSISTANCE = 0.5;
 
+const octaves = makeOctaves(3, w, h, SIZE, LACONARITY, PERSISTANCE);
+
+renderNoiseMapToCanvas(octaves[0], CANVAS_CTX);

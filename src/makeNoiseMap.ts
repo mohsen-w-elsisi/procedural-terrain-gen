@@ -1,3 +1,4 @@
+import { arrayOfLength } from "./utils";
 import noise from "./noise";
 import { NoiseMap } from "./types";
 
@@ -8,11 +9,7 @@ export default function makeNoiseMap(
 ): NoiseMap {
   return arrayOfLength(width).map((_, x) =>
     arrayOfLength(height).map((_, y) =>
-      noise(frequency * (x / width), frequency * (y / height), 0.8)
+      noise(frequency * (x / width), frequency * (y / height), 0)
     )
   );
-}
-
-function arrayOfLength(n: number) {
-  return new Array(n).fill(0);
 }
