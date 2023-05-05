@@ -1,3 +1,4 @@
+import combineOxtaves from "./combineOctaves";
 import makeOctaves from "./makeOctaves";
 import renderNoiseMapToCanvas from "./renderNoiseMapToCanvas";
 import "./style.css";
@@ -15,4 +16,8 @@ const PERSISTANCE = 0.5;
 
 const octaves = makeOctaves(3, w, h, SIZE, LACONARITY, PERSISTANCE);
 
-renderNoiseMapToCanvas(octaves[0], CANVAS_CTX);
+const finalNoiseMap = combineOxtaves(octaves)
+
+console.table(finalNoiseMap)
+
+renderNoiseMapToCanvas(finalNoiseMap, CANVAS_CTX);
