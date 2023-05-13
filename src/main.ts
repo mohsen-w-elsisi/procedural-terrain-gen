@@ -9,15 +9,13 @@ const CANVAS_CTX = CANVAS.getContext("2d")!;
 let w = CANVAS.width;
 let h = CANVAS.height;
 
-const SIZE = 4;
+const SIZE = 6;
 
-const LACONARITY = 2;
-const PERSISTANCE = 0.6;
+const LACONARITY = 1.9;
+const PERSISTANCE = 0.5;
 
-const octaves = makeOctaves(3, w, h, SIZE, LACONARITY, PERSISTANCE);
+const octaves = makeOctaves(4, w, h, SIZE, LACONARITY, PERSISTANCE);
 
-const finalNoiseMap = combineOxtaves(octaves)
-
-console.table(finalNoiseMap)
+const finalNoiseMap = combineOxtaves(octaves);
 
 renderNoiseMapToCanvas(finalNoiseMap, CANVAS_CTX);
