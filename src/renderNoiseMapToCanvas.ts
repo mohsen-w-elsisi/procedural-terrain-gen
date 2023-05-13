@@ -23,6 +23,9 @@ const colorMap = [
   },
 ];
 
+const errorColor = "black";
+
+
 export default function renderNoiseMapToCanvas(
   noiseMap: NoiseMap,
   canvasCtx: CanvasRenderingContext2D
@@ -39,4 +42,6 @@ function pickValueColor(noiseValue: number) {
   for (const color of colorMap) {
     if (noiseValue < color.max) return color.color;
   }
+
+  return errorColor
 }
